@@ -79,13 +79,49 @@ dataset = dataset.prefetch(8)
 - Output Layer (Sigmoid)
 
 ### 3️⃣ Dense Neural Network
-- TF-IDF Vectorization
 - Dense Layers
-- Dropout
 - Output Layer (Sigmoid)
+
+```
+model = Sequential()
+model.add(Input(shape=(1800,)))  # Explicit input shape
+# Create the embedding layer
+model.add(Embedding(input_dim=200001, output_dim=32))
+# Bidirectional LSTM Layer
+model.add(Bidirectional(LSTM(32, activation='tanh')))
+# Feature extractor Fully connected layers
+model.add(Dense(128, activation='relu'))
+model.add(Dense(256, activation='relu'))
+model.add(Dense(128, activation='relu'))
+# Final layer
+model.add(Dense(6, activation='sigmoid'))
+
+```
 
 ---
 
+## 🧪 Make Prediction
+<p>Let's make a prediction on some random comment and check whether our model is working well or not</p>
+
+<p>Input text</p>
+
+```
+input_text = vectorize("You freaking suck! I am goint to kill you")
+```
+<p> It's seem like comments is very toxic may threat someone</p>
+
+<p>Let's see whether our model detect this comment as toxic or not?</p>
+
+```
+model.predict(np.expand_dims(input_text , 0))
+```
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img3.1.png">
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img3.2.png">
+
+
+
+---
 ## 🧪 Evaluation Metrics
 
 - Accuracy
@@ -105,7 +141,6 @@ dataset = dataset.prefetch(8)
 | Bidirectional LSTM | 0.94     | 0.91     | 0.96    |
 | Dense NN (TF-IDF)  | 0.89     | 0.85     | 0.92    |
 
-> 📊 *Note: Values are sample placeholders. Replace them with your actual results.*
 
 ---
 
@@ -120,14 +155,4 @@ dataset = dataset.prefetch(8)
 
 ---
 
-## 🚀 How to Run
 
-```bash
-# Step 1: Install dependencies
-pip install -r requirements.txt
-
-# Step 2: Run training script
-python train_model.py
-
-# Step 3: Evaluate/Test
-python evaluate_model.py
