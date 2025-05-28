@@ -108,38 +108,46 @@ model.add(Dense(6, activation='sigmoid'))
 ```
 input_text = vectorize("You freaking suck! I am goint to kill you")
 ```
-<p> It's seem like comments is very toxic may threat someone</p>
+<p> It's seem like comment is very toxic may threat someone</p>
 
-<p>Let's see whether our model detect this comment as toxic or not?</p>
+<p>Now let's see whether our model detect this comment as a toxic or not?</p>
 
 ```
 model.predict(np.expand_dims(input_text , 0))
 ```
 <img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img3.1.png">
 
-<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img3.2.png">
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img3.2.png"> 
+
+<p>98% comment is toxic</p>
 
 
 
 ---
 ## 🧪 Evaluation Metrics
 
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-- ROC-AUC Score
+- Precision 
+- Recall 
+- CategoricalAccuracy
+
+```
+pre = Precision()
+re = Recall()
+acc = CategoricalAccuracy()
+```
+
+
 
 ---
 
-## ✅ Sample Results
+✅ Final Model Evaluation
 
-| Model              | Accuracy | F1 Score | ROC-AUC |
-|--------------------|----------|----------|---------|
-| LSTM               | 0.93     | 0.89     | 0.95    |
-| Bidirectional LSTM | 0.94     | 0.91     | 0.96    |
-| Dense NN (TF-IDF)  | 0.89     | 0.85     | 0.92    |
+| Metric        | Score |
+| ------------- | ----- |
+| **Precision** | 0.804 |
+| **Recall**    | 0.722 |
+| **Accuracy**  | 0.498 |
+
 
 
 ---
