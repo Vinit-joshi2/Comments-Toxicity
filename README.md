@@ -98,6 +98,10 @@ model.add(Dense(6, activation='sigmoid'))
 
 ```
 
+<p>Embedding Layer</p>
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/Emedding%20Model.png">
+
 ---
 
 ## 🧪 Make Prediction
