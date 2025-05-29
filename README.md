@@ -102,6 +102,10 @@ model.add(Dense(6, activation='sigmoid'))
 
 <img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/Emedding%20Model.png">
 
+<p>Architecture</p>
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/Architecture.png">
+
 ---
 
 ## 🧪 Make Prediction
