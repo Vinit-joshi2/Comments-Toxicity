@@ -173,7 +173,7 @@ acc = CategoricalAccuracy()
 
 ## 🧪 Test the Model
 
-<p>Now let's the model by passing some comments to our model </p>
+<p>Now let's test the model by passing some comments to our model </p>
 
 ```
 import tensorflow as tf
