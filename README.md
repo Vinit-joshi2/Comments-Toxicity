@@ -171,4 +171,14 @@ acc = CategoricalAccuracy()
 
 ---
 
+## 🧪 Test the Model
 
+<p>Now let's the model by passing some comments to our model </p>
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img1.1.png">
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img1.2.png">
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img2.1.png">
+
+<img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img2.2.png">
