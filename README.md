@@ -175,6 +175,33 @@ acc = CategoricalAccuracy()
 
 <p>Now let's the model by passing some comments to our model </p>
 
+```
+import tensorflow as tf
+import gradio as gr
+
+def score_comment(comment):
+    vectorized_comment = vectorize([comment])
+    results = model.predict(vectorized_comment)
+
+    text = ''
+    for idx, col in enumerate(df.columns[2:]):
+        text += '{}: {}\n'.format(col, results[0][idx]>0.5)
+
+    return text
+```
+
+```
+interface = gr.Interface(
+    fn=score_comment,
+    inputs=gr.Textbox(lines=2, placeholder='Comment to score', label="Enter Comment"),
+    outputs=gr.Textbox(label="Toxicity Score")
+)
+```
+
+```
+interface.launch(share=True)
+```
+
 <img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img1.1.png">
 
 <img src = "https://github.com/Vinit-joshi2/Comments-Toxicity/blob/main/img1.2.png">
