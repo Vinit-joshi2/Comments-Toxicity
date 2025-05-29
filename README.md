@@ -70,13 +70,13 @@ dataset = dataset.prefetch(8)
 - Embedding Layer
 - LSTM Layer
 - Dense Layers
-- Output Layer (Sigmoid)
+
 
 ### 2️⃣ Bidirectional LSTM
 - Embedding Layer
 - Bidirectional LSTM
 - Dense Layers
-- Output Layer (Sigmoid)
+
 
 ### 3️⃣ Dense Neural Network
 - Dense Layers
